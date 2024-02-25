@@ -67,8 +67,8 @@ def calculate_mathematical_expression(num1, num2, math_oprt):
     return None
 
 
-def is_power(b: int, x: int) -> bool:
-    """return True if there are an integer n such as b^n = x, and False otherwise """
+def is_power(b: int, x: int) -> bool:  # TODO: is the running time O(log b * lox x) ???
+    """return True if there is an integer n such as b^n = x, and False otherwise, with running time O(log b * lox x)"""
     if b == 1:  # check special case
         return x == 1
     if b > x:

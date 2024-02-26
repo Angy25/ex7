@@ -1,3 +1,5 @@
+from typing import Any
+
 from ex7_helper import *
 
 
@@ -102,6 +104,26 @@ def is_power(b: int, x: int) -> bool:
 
     # recursion
     return is_power(b, division(x, b))
+
+
+def play_hanoi(hanoi: Any, n: int, src: Any, dest: Any, temp: Any):
+    """
+
+    :param dest:
+    :param hanoi:
+    :param n:
+    :param src:
+    :param temp:
+    :return:
+    """
+    # recursion: move triangle to temp from src
+    play_hanoi(hanoi, n - 1, src, temp, dest)
+
+    # move base to destination (the pole which is not src or temp)
+    hanoi.move(src, dest)
+
+    # move triangle on top of base
+    play_hanoi(hanoi, n - 1, temp, dest, src)
 
 
 if __name__ == '__main__':
